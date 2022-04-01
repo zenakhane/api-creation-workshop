@@ -185,3 +185,4 @@ Make sure to restart your app and test the filtering at: `http://localhost:4017`
 
 Add your source code to GitHub.
 Deploy the app to Heroku.
+Share the link to your deployed App with the mentors `gwi-mentors@projectcodex.co`
