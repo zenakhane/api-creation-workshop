@@ -1,6 +1,6 @@
 # Create a basic API
 
-To create an API you need a web server. We will use ExpressJS the JavaScript Web Server to create an API that provides data for Missy Tee Online store. It's still work in progress and should look like this once the API is working.
+To create an API you need a web server. We will use `ExpressJS` the JavaScript Web Server to create an API that provides data for `Missy Tee` clothing store. It's still work in progress and should look like this once the API is working.
 
 ![](./public/images/MissyTee-2.png)
 
@@ -56,6 +56,9 @@ You should see a basic web page in the browser at: `http://localhost:4017` that 
 
 ![](./public/images/MissyTee-1.png)
 
+If you click on the radio buttons and use the slider nothing will happen. And there will be errors in the Google Developer Console.
+
+Take a look at the client side source code in the `./public/app.js` file.
 
 ## Setup the garment dataset
 
