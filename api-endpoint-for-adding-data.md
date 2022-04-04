@@ -113,11 +113,11 @@ JSON to try:
 
 ```json
 {
-	description: 'Rainbow unicorn sweater',
-	price: 799.00,
-	img : 'placeholder.png',
-	gender : 'Unisex',
-	season : 'All season'
+	'description': 'Rainbow unicorn sweater',
+	'price': 799.00,
+	'img' : 'placeholder.png',
+	'gender' : 'Unisex',
+	'season' : 'All season'
 }
 ```
 
