@@ -14,13 +14,13 @@ Start by:
 
 * Forking and cloning this repository,
 * creating a file called `index.js` (the file is created already in this repo)
-* instantiate a npm package
+* instantiating a npm package
 * installing `ExpressJS`
 * open VSCode
 * add the `node_modules` folder to your `.gitignore` file
-* setup a basic express instance.
+* setup a basic express instance (the code for that is below).
 
-By using these commands:
+Use these commands:
 
 ```
 touch index.js
@@ -185,3 +185,4 @@ Make sure to restart your app and test the filtering at: `http://localhost:4017`
 
 Add your source code to GitHub.
 Deploy the app to Heroku.
+Share the link to your deployed App with the mentors `gwi-mentors@projectcodex.co`
