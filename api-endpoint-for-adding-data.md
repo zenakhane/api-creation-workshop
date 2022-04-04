@@ -1,6 +1,6 @@
 # Create an API endpoint for adding data.
 
-To extend the API to be able to add new products we need to add a `post` route.
+To extend the API to be able to add new garments we need to add a `post` route that can send data to the server.
 
 The POST route should be callable form the DOM like this:
 
@@ -28,11 +28,15 @@ axios.post('/api/garments', domFields
 
 > Create a snackbar using these [instructions](https://www.w3schools.com/howto/howto_js_snackbar.asp). 
 
+Note the `domFields` object which values should be read from the DOM.
+
 ## Create a new POST route
 
-Copy the code below into `index.js` to create a new POST route called `/api/garments`. This route will add `garment add support` to the API.
+To create a new POST route called `/api/garments` copy the code below into `index.js` file. This route will add `garment add support` to the API.
 
-The endpoint received data from the HttpRequest body attribute (`req.body`) in the post request.
+This endpoint will receive data from the HttpRequest body attribute (`req.body`) in the post request. It then reads all the required fields from `req.body` and check if all the required fields have been entered. If not an error message is returned, otherwise the new entry is added to the `garments` list and a success message is returned.
+
+Be sure to test the new API endpoint using `Thunder Client` after the appropriate middleware was added as instructed below.
 
 ```js
 
@@ -73,7 +77,6 @@ app.post('/api/garments', (req, res) => {
 			status: 'success',
 			message: 'New garment added.',
 		});
-
 	}
 
 });
@@ -81,7 +84,7 @@ app.post('/api/garments', (req, res) => {
 ```
 ## Required Middleware
 
-For an `POST` route to work correctly in ExpressJS you need to configure some middleware.
+For an `POST` routes to work correctly in ExpressJS you need to configure some [middleware](https://expressjs.com/en/api.html#express.json). Read more on that link about `express.json()` and `express.urlencoded({ extended: false })` [here](https://expressjs.com/en/api.html#req.body) as well.
 
 Add this code to your `index.js` file, above any route declarations.
 
