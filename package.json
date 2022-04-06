@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "In this workshop we explore how to create an API using ExpressJS.",
   "main": "index.js",
+  
   "scripts": {
     "test": "mocha",
     "start": "node index.js"

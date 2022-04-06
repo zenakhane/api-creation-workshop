@@ -21,16 +21,18 @@ genderOptions.addEventListener('click', function(evt){
 	filterData();
 });
 
-// function filterData() {
-// 	axios
-// 		.get(`https://localhost:4017/api/garments`)//?gender=${genderFilter}&season=${seasonFilter}`)
-// 		.then(function(result) {
-// 			console.log(result)
-// 			searchResultsElem.innerHTML = garmentsTemplate({
-// 				garments : result.data.garments
-// 			})
-// 		});
-// }
+
+function myFunction() {
+	// Get the snackbar DIV
+	var x = document.getElementById("snackbar");
+  
+	// Add the "show" class to DIV
+	x.className = "show";
+  
+	// After 3 seconds, remove the show class from DIV
+	setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+  }
+
 function filterData() {
     axios
         .get(`/api/garments?gender=${genderFilter}&season=${seasonFilter}`)
