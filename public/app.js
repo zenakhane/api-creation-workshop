@@ -11,6 +11,34 @@ const garmentsTemplateText = document.querySelector('.garmentListTemplate');
 const garmentsTemplate = Handlebars.compile(garmentsTemplateText.innerHTML);
 
 
+const loginBtn = document.querySelector('.button')
+const userInput = document.querySelector('.login')
+const messageFor = document.querySelector('.messageText')
+loginBtn.addEventListener('click',function(){
+	if(userInput.value){
+		axios
+		.post('/api/token/', {userInput: userInput.value})
+	     .then(function(data){
+console.log(data.token);
+localStorage.setItem('token',token)
+		 })
+	}
+
+
+const token = localStorage.getItem('token')
+const url = `/api/name?token=${token}`
+axios
+    .get(url)
+	 .then(function(result){
+		 const { name} = result.data
+		 messageFor.innerHTML = name;
+	 })
+	 error(function(err){
+messageFor.innerHTML = err.messageFor;
+	 })
+	})
+
+
 seasonOptions.addEventListener('click', function(evt){
 	seasonFilter = evt.target.value;
 	filterData();
@@ -55,3 +83,12 @@ priceRangeElem.addEventListener('change', function(evt){
 });
 
 filterData();
+
+function myFunction() {
+	var x = document.querySelector("missy");
+	if (x.style.display === "none") {
+	  x.style.display = "block";
+	} else {
+	  x.style.display = "none";
+   }
+  }

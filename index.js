@@ -1,6 +1,7 @@
 // add code in here to create an API with ExpressJS
 const express = require('express');
 const app = express();
+
 // import the dataset to be used here
 const garments = require('./garments.json');
 // enable the static folder...
@@ -96,6 +97,40 @@ app.get('/api/garments/price/:price', function(req, res){
         garments : filteredGarments
     });
 });
+app.post('/api/posts', verifyToken, (req,res)=>{
+	jwt.verify(req.token, 'secretkey', (err,authData) =>{
+		if(err){
+			res.sendStatus(403)
+		}else{
+		 res.json({
+			 message: 'Post created...',
+			 authData
+		 })
+		}
+	})
+	 
+ });
+
+app.post('/api/login',(req,res) => {
+    const { user } = req.body
+    jwt.sign({user}, 'secretkey',{expiresIn: '24hr'} ,(err, token) => {
+        res.json({
+            token
+        })
+    })
+});
+
+function verifyToken(req,res,next){
+    const bearerHeader = req.headers['authorization'];
+if(typeof bearerHeader !== 'undefined'){
+const bearer = bearerHeader.split(' ')
+const bearerToken = bearer[1];
+req.token = bearerToken;
+next();
+}else{
+    res.sendStatus(403)
+}
+}
 
 const PORT = process.env.PORT || 4017;
 

@@ -10,6 +10,10 @@
 	<link rel="stylesheet" href="style.css">
 
 	<script class="garmentListTemplate" type="type/script-x" >
+
+		
+
+
 		<div>
 			{{garments.length}} <strong>garments found</strong>
 		</div>
@@ -31,14 +35,21 @@
 	</div>
 	{{/each}}
 		</div>
-					
-		<button onclick="myFunction()">Show Snackbar</button>
-		<div id="snackbar">Some text some message..</div>
+				
 	</script>
 </head>
 <body>
-	<div class="container" >
+	<div class="container">
 		<h1>Missy Tee - clothing store</h1>
+
+		<div class="loginScreen">
+			<input  class="login" type="text" placeholder="enter your github username" >
+			<button class="button" type="button">login</button>
+		<div class="messageText">
+
+		</div>
+		</div>
+		<div class="missy hidden" >
 		<div class="filter" >
 			<h2>Filter</h2>
 			<div class="genders" >
@@ -136,6 +147,7 @@
 			</div>
 		</div>
 	</div>
+</div>
 	<script src="app.js"></script>
 	<script src="field-manager.js"></script>
 	<script src="add-garment.js"></script>
